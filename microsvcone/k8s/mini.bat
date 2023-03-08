@@ -1,0 +1,1 @@
+minikube ssh "rm build.sh && wget http://192.168.1.7:8000/k8s/build.sh && sh build.sh"

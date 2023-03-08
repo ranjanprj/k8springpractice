@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microsvcone
+  labels:
+    app: microsvcone
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microsvcone
+  template:
+    metadata:
+      labels:
+        app: microsvcone
+
+    spec:
+      containers:
+      - name: microsvcone
+        image: microsvcone:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8888
+
+
