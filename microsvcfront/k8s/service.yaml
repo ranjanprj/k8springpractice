@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: microsvcfront-svc
+spec:
+  selector:
+    app: microsvcfront
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8888

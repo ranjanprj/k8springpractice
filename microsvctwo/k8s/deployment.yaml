@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microsvctwo
+  labels:
+    app: microsvctwo
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microsvctwo
+  template:
+    metadata:
+      labels:
+        app: microsvctwo
+
+    spec:
+      containers:
+      - name: microsvctwo
+        image: microsvctwo:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8888
+
+

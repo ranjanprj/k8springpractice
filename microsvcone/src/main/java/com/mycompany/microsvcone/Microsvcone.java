@@ -16,7 +16,7 @@ public class Microsvcone {
     
     @RequestMapping("/")
     String home(){
-        return "hello world there";
+        return "HELLO FROM MICRO SERVICE 1";
     }
     
     public static void main(String[] args) {
