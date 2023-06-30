@@ -1,0 +1,6 @@
+rm Dockerfile
+wget http://192.168.1.9:8000:8000/sftp/Dockerfile
+docker stop test
+docker rm test
+docker build -t mysftp .
+docker run --name test -it mysftp

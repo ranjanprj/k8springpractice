@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  appname
+  labels:
+    app:  appname
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  appname
+  template:
+    metadata:
+      labels:
+        app:  appname
+
+    spec:
+      containers:
+      - name:  appname
+        image:  appname:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8888
+
+
