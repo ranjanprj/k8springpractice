@@ -15,8 +15,4 @@ sed  s/appname/%CurrDirName%/g s.template > service.yaml
 cd ..
 
 
-
-copy target\*.jar target\app.jar
-
-
 mvn clean install && minikube ssh "export ipaddr=%localIp% && export appname=%CurrDirName% && rm -f build.sh && wget -O build.sh "http://$ipaddr:8000/mf/k8s/build.sh" && sh build.sh" && kubectl apply -f k8s/ && kubectl delete -f k8s/ && kubectl apply -f k8s/

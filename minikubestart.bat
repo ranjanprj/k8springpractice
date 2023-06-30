@@ -1,3 +1,1 @@
-set PATH=%PATH%;sed.exe
-minikube start
-python -m http.server
+minikube start && start python -m http.server && minikube dashboard
